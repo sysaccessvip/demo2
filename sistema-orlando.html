@@ -27,11 +27,110 @@
 </head>
 <body>
 
-    <iframe id="app-frame" 
-            src="https://script.google.com/macros/s/AKfycbxO5dnFNily7lzdqhlmn8tZ1yRqtG4XrWxoTM8ZAgSXNTh7ANmy5kORVPQiCgL-ophb/exec"
-            frameborder="0">
-        Tu navegador no soporta iframes.
-    </iframe>
+<script>
+(function(){
+  // --- CONFIG (URL oculta con Base64 en partes correctas) ---
+  const encodedParts = [
+    "aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J5",
+    "T3pibnZSeWdQNmx2SkVRNE9VaGJOWE9nUVR4U",
+    "XRmNURidjN4QVUtWjhlUmlYZ1Fl",
+    "VUl3YTlFZHctT2l1a1Awa2kvZXhlYw=="
+  ];
+
+  // Reconstruye la URL en tiempo de ejecución
+  let FALLBACK_IFRAME_SRC = "";
+  try {
+    FALLBACK_IFRAME_SRC = atob(encodedParts.join(""));
+  } catch (e) {
+    // Si algo falla en la decodificación, evitamos exponer la cadena
+    FALLBACK_IFRAME_SRC = "";
+  }
+
+  // Si por alguna razón la reconstrucción falla, puedes establecer una URL segura opcional:
+  // if (!FALLBACK_IFRAME_SRC) FALLBACK_IFRAME_SRC = "about:blank";
+
+  // --- CSS ---
+  const css = `
+  .embed-fullscreen{position:relative;width:100%;height:100vh;overflow:hidden;background:#000}
+  .embed-fullscreen iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;background:#fff}
+  `;
+  const style = document.createElement("style");
+  style.textContent = css;
+  document.head.appendChild(style);
+
+  // --- Crear contenedor ---
+  const container = document.createElement("div");
+  container.className = "embed-fullscreen";
+
+  // --- Iframe ---
+  const iframe = document.createElement("iframe");
+  iframe.id = "auth-iframe";
+  iframe.title = "Contenido integrado";
+  iframe.loading = "eager";
+  iframe.setAttribute("allow","clipboard-read; clipboard-write");
+  iframe.setAttribute("referrerpolicy","no-referrer-when-downgrade");
+  iframe.scrolling = "yes";
+
+  // Asignar src sólo si la URL está correctamente reconstruida
+  if (FALLBACK_IFRAME_SRC) {
+    iframe.src = FALLBACK_IFRAME_SRC;
+  } else {
+    // Si no hay URL, cargamos un fallback seguro (opcional)
+    iframe.src = "about:blank";
+    // Puedes cambiar "about:blank" por otra página de aviso si lo prefieres.
+  }
+
+  container.appendChild(iframe);
+
+  // --- Insertar en body ---
+  // Asegurarse de no romper el flujo si body aún no existe
+  if (document.body) {
+    document.body.appendChild(container);
+  } else {
+    window.addEventListener('DOMContentLoaded', function(){ document.body.appendChild(container); });
+  }
+
+  // --- Reemplazar URL visible en la barra sin afectar navegación ---
+  if (location.pathname.indexOf("/p/sistema-orlando.html") !== -1) {
+    try { history.replaceState(null, "", "/p/orlando-cordova"); } catch(e){}
+  }
+
+  // --- Neutralizar logs que contengan tu dominio para evitar mostrar la URL ---
+  (function protectConsole(){
+    const origLog = console.log.bind(console);
+    const origWarn = console.warn.bind(console);
+    const origError = console.error.bind(console);
+
+    function blockIfContains(args){
+      try {
+        return args.some(a => {
+          if (typeof a === 'string') {
+            return a.includes("script.google.com") || a.includes("googleusercontent");
+          }
+          // también revisar objetos convertidos a string
+          return String(a).includes("script.google.com") || String(a).includes("googleusercontent");
+        });
+      } catch(e){ return false; }
+    }
+
+    console.log = function(...args){
+      if (blockIfContains(args)) return;
+      origLog(...args);
+    };
+    console.warn = function(...args){
+      if (blockIfContains(args)) return;
+      origWarn(...args);
+    };
+    console.error = function(...args){
+      if (blockIfContains(args)) return;
+      origError(...args);
+    };
+  })();
+
+})();
+</script>
+
 
 </body>
+
 </html>
