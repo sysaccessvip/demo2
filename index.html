@@ -1,219 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>sysaccessvip — Ingeniería de software</title>
-  <meta name="description" content="sysaccessvip — Desarrollo de sitios web, sistemas, apps y consultoría técnica." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Tu Nombre] // Desarrollador de Software</title>
 
-  <!-- Favicon & PWA manifest (coloca la carpeta favicon_io en la raíz del repo) -->
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="favicon_io/site.webmanifest">
-  <link rel="shortcut icon" href="favicon_io/favicon.ico">
-  <meta name="msapplication-TileColor" content="#2b5797">
-  <meta name="theme-color" content="#071427">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Tipografía (opcional) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- INTRO -->
-  <div id="intro" class="intro" role="status" aria-label="Intro sysaccessvip">
-    <div class="intro__panel">
-      <svg class="intro__logo" viewBox="0 0 120 120" aria-hidden="true">
-        <defs>
-          <linearGradient id="g" x1="0" x2="1">
-            <stop offset="0" stop-color="#00d4ff"/>
-            <stop offset="1" stop-color="#7a5cff"/>
-          </linearGradient>
-        </defs>
-        <rect x="6" y="6" width="108" height="108" rx="18" fill="url(#g)"/>
-        <g transform="translate(24,22)" fill="#fff">
-          <path d="M8 78 L8 28 L36 28 L36 36 L20 36 L20 44 L36 44 L36 78z"/>
-          <path d="M44 78 L44 28 L72 28 L72 36 L56 36 L56 44 L72 44 L72 78z" opacity="0.96"/>
-        </g>
-      </svg>
-      <div class="intro__title">sysaccessvip</div>
-      <div class="intro__sub">Diseño, código y sistemas — entrega profesional</div>
+
+    <div id="loader">
+        <div class="loader-text">&gt; iniciando_sistema<span class="cursor">_</span></div>
     </div>
-  </div>
 
-  <!-- NAV -->
-  <header class="site-header" role="banner">
-    <div class="wrap">
-      <a class="brand" href="#" aria-label="sysaccessvip - inicio">
-        <svg class="brand__svg" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 9h10" stroke="currentColor" stroke-width="1.2"/></svg>
-        <span class="brand__title">sysaccessvip</span>
-      </a>
+    <div id="app-wrapper" class="hidden">
 
-      <nav class="nav" role="navigation" aria-label="Menú principal">
-        <!-- Botón WhatsApp directo -->
-        <a id="waDirect" class="btn btn--whatsapp" href="#" title="Chatear por WhatsApp">
-          <!-- Icono WhatsApp (SVG) -->
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6">
-            <path d="M21 12.07a9 9 0 1 0-2.6 6.06L21 23l2.87-2.27A8.99 8.99 0 0 0 21 12.07z"/>
-            <path d="M16.6 14.3c-.3-.15-1.78-.88-2.05-.98-.27-.1-.47-.15-.67.15-.2.3-.77.98-.95 1.18-.17.2-.34.22-.63.07-.3-.15-1.28-.47-2.44-1.5-.9-.8-1.5-1.8-1.67-2.1-.17-.3 0-.46.13-.61.12-.12.27-.3.4-.45.13-.15.17-.25.27-.42.1-.17.05-.32-.02-.45-.07-.12-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5-.17 0-.37-.02-.57-.02-.2 0-.52.07-.79.32-.27.25-1.03 1.01-1.03 2.45 0 1.45 1.05 2.86 1.2 3.06.15.2 2.08 3.2 5.05 4.49 2.97 1.29 2.97.86 3.5.8.53-.06 1.77-.72 2.02-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35z"/>
-          </svg>
-          Chatear
-        </a>
-      </nav>
+        <aside id="sidebar">
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <h3>[Tu Nombre]</h3>
+                <span class="status"><span class="status-dot"></span>En línea</span>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="#hero" class="nav-link scroll-link active">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#services" class="nav-link scroll-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            <span>Servicios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="nav-link scroll-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22 6 -12 13 -2 6"></polyline></svg>
+                            <span>Contacto</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sistema-orlando.html" 
+                           class="nav-link nav-link-external">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            <span>Sistema Orlando</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main id="main-content">
+
+            <section id="hero" class="content-section">
+                <div class="chat-message received">
+                    <span class="message-sender">System</span>
+                    <h1 class="typing-effect">Bienvenido a mi espacio.</h1>
+                    <p>Soy [Tu Nombre], desarrollador de software. Convierto ideas complejas en soluciones de código elegantes y eficientes.</p>
+                    <button id="openModalBtn" class="cta-button">Empezar un Proyecto</button>
+                </div>
+            </section>
+
+            <section id="services" class="content-section">
+                <h2 class="animated-item">// Servicios Disponibles</h2>
+                
+                <div class="service-list">
+                    <div class="service-item animated-item">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <div class="service-info">
+                            <h3>Creación de Sitios Web</h3>
+                            <p>Desarrollo de sitios web ultra-rápidos, responsivos y optimizados para SEO. Tu presencia digital, reinventada.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-item animated-item">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path></svg>
+                        </div>
+                        <div class="service-info">
+                            <h3>Sistemas de Dashboard</h3>
+                            <p>Sistemas de administración y paneles de control a medida para visualizar datos, gestionar usuarios y controlar tu negocio.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item animated-item">
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                        </div>
+                        <div class="service-info">
+                            <h3>Creación de Aplicaciones</h3>
+                            <p>Desde Web Apps (PWA) hasta aplicaciones complejas. Desarrollo de soluciones escalables, seguras y de alto rendimiento.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="content-section">
+                <h2 class="animated-item">// Hablemos</h2>
+                <p class="animated-item">Estoy disponible para nuevos proyectos y colaboraciones. No dudes en contactarme para discutir tu idea.</p>
+                <button id="openModalBtnSecondary" class="cta-button animated-item">Ver Opciones de Contacto</button>
+            </section>
+        </main>
+
+    </div> <a href="https://wa.me/51960436357?text=Hola,%20vengo%20de%20tu%20sitio%20web%20y%20me%20gustaría%20consultar%20sobre..." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.451 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.273-.099-.471-.148-.67.148-.197.297-.768.967-.941 1.164-.173.197-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.521-.075-.148-.67-1.611-.916-2.206-.242-.58-.487-.501-.67-.51-.183-.009-.381-.009-.579-.009-.198 0-.523.074-.797.371-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.203 5.076 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
+    </a>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contacto Directo</h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p>Puedes enviarme un correo electrónico:</p>
+                <a href="mailto:tuemail@dominio.com" class="contact-link email">tuemail@dominio.com</a>
+                
+                <p>O iniciar un chat directo por WhatsApp:</p>
+                <a href="https://wa.me/51960436357?text=Hola,%20vengo%20de%20tu%20sitio%20web..." class="contact-link whatsapp" target="_blank" rel="noopener noreferrer">Iniciar Chat</a>
+            </div>
+        </div>
     </div>
-  </header>
 
-  <!-- HERO -->
-  <main>
-    <section class="hero">
-      <div class="wrap hero__inner">
-        <div class="hero__left">
-          <h1 class="hero__title" aria-live="polite">
-            <span id="typed" class="typed"></span><span class="cursor">|</span>
-          </h1>
-          <p class="hero__lead">
-            Construimos <strong>sistemas robustos</strong>, <strong>APIs seguras</strong> y <strong>interfaces intuitivas</strong>.
-            Entregas CI/CD, pruebas, documentación y soporte.
-          </p>
-
-          <div class="hero__btns">
-            <a href="#servicios" class="btn btn--ghost">Servicios</a>
-            <!-- abre modal con formulario WhatsApp -->
-            <button id="ctaContact" class="btn btn--accent">Solicitar cotización</button>
-          </div>
-
-          <ul class="meta">
-            <li><strong>Stack:</strong> JS · Node · React · Python</li>
-            <li><strong>Entrega:</strong> PWA · CI/CD · Docker</li>
-            <li><strong>Pago:</strong> tarjetas · transferencia · PayPal</li>
-          </ul>
-        </div>
-
-        <div class="hero__right" aria-hidden="true">
-          <div class="device-card">
-            <svg class="device-svg" viewBox="0 0 400 300" aria-hidden="true">
-              <defs>
-                <linearGradient id="lg2" x1="0" x2="1">
-                  <stop offset="0" stop-color="#041027"/>
-                  <stop offset="1" stop-color="#071730"/>
-                </linearGradient>
-              </defs>
-              <rect x="6" y="6" width="388" height="288" rx="14" fill="url(#lg2)" stroke="#10304a" stroke-width="2"/>
-            </svg>
-            <pre class="mock-code" aria-hidden="true">
-<span class="k">const</span> <span class="n">server</span> = <span class="k">await</span> <span class="f">deploy()</span>;
-<span class="c">// CI / CD · Tests · Lint</span>
-            </pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="servicios" class="section">
-      <div class="wrap">
-        <h2 class="section__title">Servicios técnicos</h2>
-        <div class="grid">
-          <article class="service">
-            <div class="service__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M7 9h10" stroke="currentColor" stroke-width="1.2"/></svg>
-            </div>
-            <h3>Sitios profesionales</h3>
-            <p>Landing, e-commerce y sitios corporativos optimizados.</p>
-            <div class="service__meta"><span class="tag">Performance</span><span class="tag">SEO</span></div>
-          </article>
-
-          <article class="service">
-            <div class="service__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor"/><path d="M7 12h10" stroke="currentColor"/></svg>
-            </div>
-            <h3>Sistemas a medida</h3>
-            <p>APIs REST/GraphQL, integraciones y paneles seguros.</p>
-            <div class="service__meta"><span class="tag">API</span><span class="tag">Seguridad</span></div>
-          </article>
-
-          <article class="service">
-            <div class="service__icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2" fill="none" stroke="currentColor"/><circle cx="12" cy="18" r="0.6" fill="currentColor"/></svg>
-            </div>
-            <h3>Apps & PWA</h3>
-            <p>Aplicaciones móviles e híbridas, PWA con offline support.</p>
-            <div class="service__meta"><span class="tag">PWA</span><span class="tag">Play/Store</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURE BAR -->
-    <section class="section featurebar">
-      <div class="wrap featurebar__inner">
-        <div class="featurebar__left">
-          <h3>¿Listo para tu proyecto?</h3>
-          <p class="muted">Arquitectura, documentación y entregables listos para producción.</p>
-        </div>
-        <div class="featurebar__right">
-          <button id="quickContact" class="btn btn--whatsapp">Pedir presupuesto</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="wrap footer__inner">
-        <div class="copyright">© <span id="year"></span> sysaccessvip — Ingeniería de software</div>
-        <div class="footer-actions">
-          <a class="link" href="#">Política</a>
-          <a class="link" href="#">Contacto</a>
-        </div>
-      </div>
-    </footer>
-  </main>
-
-  <!-- MODAL (formulario que abre WhatsApp) -->
-  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal__backdrop" data-close></div>
-    <div class="modal__panel" role="document">
-      <button class="modal__close" aria-label="Cerrar" data-close>&times;</button>
-      <header class="modal__head">
-        <h3 id="modalTitle">Enviar mensaje por WhatsApp</h3>
-        <p class="muted">Completa los datos y te conectaremos por WhatsApp.</p>
-      </header>
-
-      <form id="contactForm" class="form">
-        <label class="form__row">
-          <span>Nombre</span>
-          <input id="name" name="name" type="text" required autocomplete="name" placeholder="Ej. Juan Perez">
-        </label>
-
-        <label class="form__row">
-          <span>Correo</span>
-          <input id="email" name="email" type="email" required autocomplete="email" placeholder="ejemplo@dominio.com">
-        </label>
-
-        <label class="form__row">
-          <span>Tipo de servicio</span>
-          <select name="service" id="service">
-            <option value="web">Sitio web</option>
-            <option value="system">Sistema a medida</option>
-            <option value="app">App / PWA</option>
-            <option value="other">Otro</option>
-          </select>
-        </label>
-
-        <label class="form__row">
-          <span>Mensaje</span>
-          <textarea id="message" name="message" rows="5" placeholder="Describe tu proyecto"></textarea>
-        </label>
-
-        <div class="form__actions">
-          <button type="submit" class="btn btn--whatsapp">Enviar por WhatsApp</button>
-          <button type="button" class="btn btn--ghost" data-close>Cancelar</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>

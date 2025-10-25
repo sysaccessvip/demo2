@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Orlando - App</title>
+    
+    <style>
+        /* Reseteo básico para que el iframe ocupe todo */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Evita barras de scroll en el contenedor */
+            background-color: #0d1117; /* Mismo fondo oscuro por si el iframe tarda en cargar */
+        }
+        
+        /* Estilos del iframe */
+        #app-frame {
+            width: 100vw;   /* 100% del ancho de la ventana */
+            height: 100vh;  /* 100% del alto de la ventana */
+            border: none;   /* Sin bordes */
+            display: block; /* Asegura que no haya espacios extra */
+        }
+    </style>
+</head>
+<body>
+
+    <iframe id="app-frame" 
+            src="https://script.google.com/macros/s/AKfycbxO5dnFNily7lzdqhlmn8tZ1yRqtG4XrWxoTM8ZAgSXNTh7ANmy5kORVPQiCgL-ophb/exec"
+            frameborder="0">
+        Tu navegador no soporta iframes.
+    </iframe>
+
+</body>
+</html>
